@@ -4,12 +4,12 @@ public class Offerte {
 
     private int ID;
     private String unternehmensname;
-    private int preis;
+    private double preis;
     private double mehrwehrsteuer;
     private String address;
     private Ort ort;
 
-    public Offerte(int ID, String unternehmensname, int preis, double mehrwehrsteuer, String address, Ort ort) {
+    public Offerte(int ID, String unternehmensname, double preis, double mehrwehrsteuer, String address, Ort ort) {
         this.ID = ID;
         this.unternehmensname = unternehmensname;
         this.preis = preis;
@@ -34,11 +34,11 @@ public class Offerte {
         this.unternehmensname = unternehmensname;
     }
 
-    public int getPreis() {
+    public double getPreis() {
         return preis;
     }
 
-    public void setPreis(int preis) {
+    public void setPreis(double preis) {
         this.preis = preis;
     }
 

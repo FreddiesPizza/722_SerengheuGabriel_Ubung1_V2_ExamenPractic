@@ -30,13 +30,4 @@ public class Service {
         return sortedOfferte;
     }
 
-    public String getMostFrequentOrt(List<Offerte> liste) {
-        Map.Entry<Double, Double> maxLocation = liste.stream()
-                .collect(Collectors.groupingBy(Offerte::getPreis, Collectors.summingDouble(Offerte::getPreis)))
-                .entrySet().stream()
-                .max(Map.Entry.comparingByValue())
-                .orElseThrow(NullPointerException::new);
-
-            return maxLocation.getKey() + ": " + maxLocation.getValue();
-    }
 }

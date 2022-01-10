@@ -1,0 +1,4 @@
+Thurgau&38000.0
+Zürich&50000.0
+st_gallen&65000.0
+Zürich&65700.0

@@ -23,6 +23,17 @@ public class Repository {
             return listeOfferte;
     }
 
+    public void writeToStatistik(String fileName, List<Offerte> liste, String character) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
+        for (Offerte offerte : liste) {
+            String line = offerte.getOrt() + character + offerte.getPreis();
+            bufferedWriter.write(line);
+            bufferedWriter.newLine();
+        }
+
+        bufferedWriter.close();
+    }
+
     public void writeToFile(String fileName, List<Offerte> liste, String character) throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
         for (Offerte offerte : liste) {

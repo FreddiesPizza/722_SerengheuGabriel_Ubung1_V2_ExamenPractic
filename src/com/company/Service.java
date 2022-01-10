@@ -23,6 +23,13 @@ public class Service {
         return sortedOfferte;
     }
 
+    public List<Offerte> sortListeOfferteByTotalPrice(List<Offerte> liste) {
+        List<Offerte> sortedOfferte = liste.stream()
+                .sorted(Comparator.comparing(Offerte::getPreis))
+                .collect(Collectors.toList());
+        return sortedOfferte;
+    }
+
     public String getMostFrequentOrt(List<Offerte> liste) {
         Map.Entry<Double, Double> maxLocation = liste.stream()
                 .collect(Collectors.groupingBy(Offerte::getPreis, Collectors.summingDouble(Offerte::getPreis)))
